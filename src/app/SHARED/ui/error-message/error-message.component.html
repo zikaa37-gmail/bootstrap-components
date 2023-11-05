@@ -1,0 +1,57 @@
+<ng-container *ngIf="filteredErrorKeys?.length">
+  <!-- errors: {{ filteredErrorKeys | json }} <br />
+  maxlength: {{ errors.maxlength.requiredLength }} <br />
+  minlength: {{ errors.minlength.requiredLength }} <br />
+  max: {{ errors.max | json }} <br />
+  min: {{ errors.min | json }} <br /> -->
+  <div
+    class="alert alert-danger fade show d-flex flex-row align-items-center"
+    role="alert"
+  >
+    <i
+      class="fa fa-circle-exclamation mx-3"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></i>
+    <div [ngSwitch]="filteredErrorKeys[0]">
+      <!-- required -->
+      <div *ngSwitchCase="'required'">{{ "errors.required" | translate }}</div>
+
+      <!-- string -->
+      <div *ngSwitchCase="'minlength'">
+        {{
+          "errors.minLength"
+            | translate : { min: errors.minlength.requiredLength }
+        }}
+      </div>
+      <div *ngSwitchCase="'maxlength'">
+        {{
+          "errors.maxLength"
+            | translate : { max: errors.maxlength.requiredLength }
+        }}
+      </div>
+
+      <!-- pattern -->
+      <div *ngSwitchCase="'pattern'">{{ "errors.pattern" | translate }}</div>
+      <div *ngSwitchCase="'email'">{{ "errors.email" | translate }}</div>
+      <div *ngSwitchCase="'passwordFormat'">
+        {{ "errors.passwordFormat" | translate }}
+      </div>
+
+      <!-- numbers min, actual, max -->
+      <div *ngSwitchCase="'min'">
+        {{ "errors.minNumber" | translate : { min: errors.min.min } }}
+      </div>
+      <div *ngSwitchCase="'max'">
+        {{ "errors.maxNumber" | translate : { max: errors.max.max } }}
+      </div>
+
+      <!-- other -->
+      <div *ngSwitchCase="'notArabic'">
+        {{ "errors.notArabic" | translate }}
+      </div>
+    </div>
+
+    <!-- <i class="fa fa-close" data-bs-dismiss="alert" aria-label="Close"></i> -->
+  </div>
+</ng-container>

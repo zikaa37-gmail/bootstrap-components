@@ -1,0 +1,15 @@
+{
+  "test": "test_en",
+  "errors": {
+    "required": "This field is required",
+    "pattern": "This field is invalid",
+    "minLength": "This field needs to have minimum {{min}} characters",
+    "maxLength": "This field needs to have {{max}} characters",
+    "minNumber": "Number needs to be bigger than {{min}}",
+    "maxNumber": "Number needs to be smaller than {{max}}",
+    "email": "This field is not a valid email address",
+    "passwordFormat": "This field is not a valid password format",
+    "unique": "This field is not unique",
+    "date": "This field is not a valid date"
+  }
+}

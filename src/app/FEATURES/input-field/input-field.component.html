@@ -1,0 +1,52 @@
+<div class="position-relative">
+  <label [for]="name" class="form-label" *ngIf="label">
+    {{ label | translate }}
+    <span *ngIf="control.hasValidator(Validators.required)" class="text-danger"
+      >*</span
+    >
+  </label>
+
+  <ng-container *ngIf="iconBefore && !isShowHide">
+    <i
+      class="fa fa-{{ iconBefore }} pointer inside"
+      (click)="onIconClick($event)"
+    ></i>
+  </ng-container>
+
+  <input
+    [formControl]="control"
+    [type]="type"
+    class="form-control"
+    [id]="name"
+    [placeholder]="placeholder"
+    autocomplete="off"
+    [disabled]="isReadOnly"
+    (keyup)="onKeyUp($event)"
+  />
+  <!-- (keyup.enter)="onEnterPressed()" -->
+  <!-- [minLength]="minLength" -->
+  <ng-container *ngIf="iconAfter && !isShowHide">
+    <i
+      class="fa fa-{{ iconAfter }} pointer inside"
+      (click)="onIconClick($event)"
+    ></i>
+  </ng-container>
+
+  <ng-container *ngIf="iconAfter && isShowHide">
+    <i
+      class="fa fa-{{ iconAfter }} pointer inside"
+      (click)="showHide()"
+      *ngIf="!showFieldContent"
+    ></i>
+    <i
+      class="fa fa-{{ iconAfterHide }} pointer inside"
+      (click)="showHide()"
+      *ngIf="showFieldContent"
+    ></i>
+  </ng-container>
+</div>
+
+<app-error-message
+  [errors]="control.errors"
+  *ngIf="control.errors && control.touched && hasErrorValidation"
+></app-error-message>

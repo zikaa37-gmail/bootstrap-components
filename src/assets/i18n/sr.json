@@ -1,0 +1,15 @@
+{
+  "test": "test",
+  "errors": {
+    "required": "Obavezno polje",
+    "pattern": "Polje nije u ispravnom formatu",
+    "minLength": "Polje mora sadržati najmanje {{min}} znakova",
+    "maxLength": "Polje može sadržati najviše {{max}} znakova",
+    "minNumber": "Broj mora biti veći od {{min}}",
+    "maxNumber": "Broj mora biti manji od {{max}}",
+    "email": "Polje mora biti ispravna email adresa",
+    "passwordFormat": "Polje nije u ispravnom formatu",
+    "unique": "Polje mora biti jedinstveno",
+    "date": "Polje mora biti ispravan datum"
+  }
+}
