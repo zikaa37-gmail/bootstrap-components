@@ -1,0 +1,12 @@
+<ng-container *ngIf="tooltipText">
+  <ng-template #tipContent>
+    <pre> {{ tooltipText }}</pre>
+  </ng-template>
+  <i
+    class="fa fa-info-circle px-2"
+    triggers="click:blur"
+    [id]="name"
+    [placement]="placement"
+    [ngbTooltip]="tipContent"
+  ></i>
+</ng-container>

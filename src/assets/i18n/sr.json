@@ -13,5 +13,8 @@
   },
   "select": {
     "selectOption": "Odaberi optciju"
+  },
+  "tooltip": {
+    "testTooltip": "Testni tooltip"
   }
 }

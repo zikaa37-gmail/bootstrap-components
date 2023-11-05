@@ -14,6 +14,7 @@ import {
 } from './SHARED/models/button-types.model';
 import { ButtonComponent } from './FEATURES/button/button.component';
 import { SelectComponent } from './FEATURES/select/select.component';
+import { TooltipComponent } from './FEATURES/tooltip/tooltip.component';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,7 @@ import { SelectComponent } from './FEATURES/select/select.component';
     InputFieldComponent,
     ButtonComponent,
     SelectComponent,
+    TooltipComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -47,7 +49,7 @@ export class AppComponent {
   ];
   preselectedCompany = new FormControl('vip');
 
-  constructor(private translate: TranslateService) {
+  constructor(public translate: TranslateService) {
     translate.setDefaultLang('en');
     translate.use('en');
     translate.addLangs(['sr']);

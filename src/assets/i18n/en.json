@@ -13,5 +13,8 @@
   },
   "select": {
     "selectOption": "Select an option"
+  },
+  "tooltip": {
+    "testTooltip": "Test tooltip"
   }
 }

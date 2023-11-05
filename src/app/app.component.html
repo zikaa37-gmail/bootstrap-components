@@ -144,5 +144,16 @@
       [items]="companies"
       [preselectedItem]="preselectedCompany"
     ></app-select>
+
+    <!-- tooltip -->
+    <h3 class="my-3">
+      Click on the icon to see the tooltip
+      <app-tooltip
+        class="ml-2 pointer"
+        [name]="'testTooltip'"
+        [tooltipText]="translate.instant('tooltip.testTooltip')"
+      >
+      </app-tooltip>
+    </h3>
   </form>
 </div>
