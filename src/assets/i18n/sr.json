@@ -1,5 +1,4 @@
 {
-  "test": "test",
   "errors": {
     "required": "Obavezno polje",
     "pattern": "Polje nije u ispravnom formatu",
@@ -11,5 +10,8 @@
     "passwordFormat": "Polje nije u ispravnom formatu",
     "unique": "Polje mora biti jedinstveno",
     "date": "Polje mora biti ispravan datum"
+  },
+  "select": {
+    "selectOption": "Odaberi optciju"
   }
 }

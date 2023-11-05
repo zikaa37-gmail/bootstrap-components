@@ -1,0 +1,60 @@
+ul {
+  width      : 100%;
+  margin-left: -12px !important;
+  margin-top : 8px !important;
+}
+
+li {
+  text-align: left !important;
+  width     : 100% !important;
+}
+
+.dropdown-item {
+  border-bottom: 1px solid #C9CFD5 !important;
+
+  &:last-child {
+    border-bottom: none !important;
+  }
+
+  &:hover {
+    background-color: #f5f5f5 !important;
+  }
+
+  &:active {
+    color: #333 !important;
+  }
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown-toggle {
+  border-radius: 4px !important;
+}
+
+.chevron-down {
+  background-image: url("/assets/images/chevron-down.svg");
+  background-size : 10px 10px;
+
+  background-repeat  : no-repeat;
+  background-position: 95% 6px;
+}
+
+div {
+  font-weight: 500 !important;
+}
+
+.dropdown {
+  height       : 40px !important;
+  border       : 1px solid #C9CFD5 !important;
+  border-radius: 6px !important;
+  padding      : 8px 10px 8px 12px !important;
+  font-weight  : 500 !important;
+}
+
+.dropdown-menu.show {
+  display   : block;
+  max-height: 350px !important;
+  overflow-y: auto !important;
+}

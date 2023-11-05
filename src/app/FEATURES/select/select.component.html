@@ -1,0 +1,46 @@
+<ng-container *ngIf="label">
+  <label class="form-label">{{ label }}</label>
+</ng-container>
+
+<ng-container *ngIf="isMultiple">
+  <select
+    [formControl]="control"
+    [id]="name"
+    class="form-control"
+    multiple
+    (change)="onChange($event)"
+  >
+    <option value="" [disabled]="true">Select options</option>
+    <option [value]="item.value" *ngFor="let item of items">
+      {{ item.name }}
+    </option>
+  </select>
+</ng-container>
+
+<ng-container *ngIf="!isMultiple">
+  <div class="dropdown" [id]="name">
+    <div
+      class="dropdown-toggle chevron-down"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      {{ selectedItem?.name }}
+    </div>
+    <ul class="dropdown-menu" [attr.aria-labelledby]="name">
+      <li>
+        <div
+          class="dropdown-item"
+          *ngFor="let item of items"
+          (click)="setValue(item.value)"
+        >
+          {{ item.name }}
+        </div>
+      </li>
+    </ul>
+  </div>
+</ng-container>
+
+<!-- <app-error-message
+  [errors]="control.errors"
+  *ngIf="control?.errors && control?.touched && hasErrorValidation"
+></app-error-message> -->

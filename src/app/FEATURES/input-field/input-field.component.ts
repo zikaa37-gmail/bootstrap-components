@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ErrorMessageComponent } from 'src/app/SHARED/ui/error-message/error-message.component';
-import { FieldType } from 'src/app/SHARED/ui/error-message/models/field-types.model';
+import { FieldType } from 'src/app/SHARED/models/field-types.model';
 import { Validators } from '@angular/forms';
 
 @Component({

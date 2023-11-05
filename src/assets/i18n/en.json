@@ -1,5 +1,4 @@
 {
-  "test": "test_en",
   "errors": {
     "required": "This field is required",
     "pattern": "This field is invalid",
@@ -11,5 +10,8 @@
     "passwordFormat": "This field is not a valid password format",
     "unique": "This field is not unique",
     "date": "This field is not a valid date"
+  },
+  "select": {
+    "selectOption": "Select an option"
   }
 }

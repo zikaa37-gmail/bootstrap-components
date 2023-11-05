@@ -1,0 +1,17 @@
+<button
+  [type]="type"
+  class="btn btn-{{ visualType }}"
+  [id]="name"
+  [name]="name"
+  (click)="onButtonClick()"
+>
+  <ng-container *ngIf="iconBefore">
+    <i class="fa fa-{{ iconBefore }} mr-2"></i>
+  </ng-container>
+
+  {{ buttonText }}
+
+  <ng-container *ngIf="iconAfter">
+    <i class="fa fa-{{ iconAfter }} ml-2"></i>
+  </ng-container>
+</button>

@@ -1,49 +1,148 @@
 <div class="container">
   <form [formGroup]="form">
-    <div class="my-4">
-      <app-input-field
-        [control]="$any(form.get('name'))"
-        [type]="'text'"
-        [name]="'name'"
-        [label]="'Name'"
-        [placeholder]="'Enter name'"
-        (keyupValue)="onNameKeyUp($event)"
-        (enterPressed)="onNameEnterPressed($event)"
-      ></app-input-field>
+    <!-- input fields -->
+    <div class="d-flex flex-column">
+      <!-- text -->
+      <div class="my-4">
+        <app-input-field
+          [control]="$any(form.get('name'))"
+          [type]="'text'"
+          [name]="'name'"
+          [label]="'Name'"
+          [placeholder]="'Enter name'"
+          (keyupValue)="onNameKeyUp($event)"
+          (enterPressed)="onNameEnterPressed($event)"
+        ></app-input-field>
+      </div>
+
+      <!-- email -->
+      <div class="my-4">
+        <app-input-field
+          [control]="$any(form.get('email'))"
+          [type]="'email'"
+          [name]="'email'"
+          [label]="'Email'"
+          [placeholder]="'Enter email'"
+        ></app-input-field>
+      </div>
+
+      <!-- password -->
+      <div class="my-4">
+        <app-input-field
+          [control]="$any(form.get('password'))"
+          [type]="'password'"
+          [name]="'password'"
+          [label]="'Password'"
+          [placeholder]="'Enter password'"
+          [iconAfter]="'eye'"
+          [iconAfterHide]="'eye-slash'"
+          [isShowHide]="true"
+          (iconClicked)="onPasswordIconClicked($event)"
+        ></app-input-field>
+      </div>
+
+      <!-- number -->
+      <div class="my-4">
+        <app-input-field
+          [control]="$any(form.get('age'))"
+          [type]="'number'"
+          [name]="'age'"
+          [label]="'Age'"
+          [placeholder]="'Enter your age'"
+        ></app-input-field>
+      </div>
     </div>
 
-    <div class="my-4">
-      <app-input-field
-        [control]="$any(form.get('email'))"
-        [type]="'email'"
-        [name]="'email'"
-        [label]="'Email'"
-        [placeholder]="'Enter email'"
-      ></app-input-field>
+    <!-- buttons -->
+    <div class="d-flex-flex-row">
+      <app-button
+        class="mx-3"
+        [iconBefore]="'close'"
+        [buttonText]="'PRIMARY'"
+        [visualType]="ButtonVisualType.PRIMARY"
+        [type]="ButtonType.BUTTON"
+        [name]="'primaryButton'"
+        (buttonClicked)="onButtonClick()"
+      ></app-button>
+
+      <app-button
+        class="mx-3"
+        [iconAfter]="'close'"
+        [buttonText]="'SECONDARY'"
+        [visualType]="ButtonVisualType.SECONDARY"
+        [type]="ButtonType.BUTTON"
+        [name]="'secondaryButton'"
+        (buttonClicked)="onButtonClick()"
+      ></app-button>
+
+      <app-button
+        class="mx-3"
+        [iconAfter]="'close'"
+        [buttonText]="'SUCCESS'"
+        [visualType]="ButtonVisualType.SUCCESS"
+        [type]="ButtonType.BUTTON"
+        [name]="'successButton'"
+        (buttonClicked)="onButtonClick()"
+      ></app-button>
+
+      <app-button
+        class="mx-3"
+        [iconAfter]="'close'"
+        [buttonText]="'DANGER'"
+        [visualType]="ButtonVisualType.DANGER"
+        [type]="ButtonType.BUTTON"
+        [name]="'dangerButton'"
+        (buttonClicked)="onButtonClick()"
+      ></app-button>
+
+      <app-button
+        class="mx-3"
+        [iconAfter]="'close'"
+        [buttonText]="'INFO'"
+        [visualType]="ButtonVisualType.INFO"
+        [type]="ButtonType.BUTTON"
+        [name]="'infoButton'"
+        (buttonClicked)="onButtonClick()"
+      ></app-button>
+
+      <app-button
+        class="mx-3"
+        [iconAfter]="'close'"
+        [buttonText]="'DARK'"
+        [visualType]="ButtonVisualType.DARK"
+        [type]="ButtonType.BUTTON"
+        [name]="'darkButton'"
+        (buttonClicked)="onButtonClick()"
+      ></app-button>
+
+      <app-button
+        class="mx-3"
+        [iconAfter]="'close'"
+        [buttonText]="'LIGHT'"
+        [visualType]="ButtonVisualType.LIGHT"
+        [type]="ButtonType.BUTTON"
+        [name]="'lightButton'"
+        (buttonClicked)="onButtonClick()"
+      ></app-button>
+
+      <app-button
+        class="mx-3"
+        [iconAfter]="'close'"
+        [buttonText]="'LINK'"
+        [visualType]="ButtonVisualType.LINK"
+        [type]="ButtonType.BUTTON"
+        [name]="'linkButton'"
+        (buttonClicked)="onButtonClick()"
+      ></app-button>
     </div>
 
-    <div class="my-4">
-      <app-input-field
-        [control]="$any(form.get('password'))"
-        [type]="'password'"
-        [name]="'password'"
-        [label]="'Password'"
-        [placeholder]="'Enter password'"
-        [iconAfter]="'eye'"
-        [iconAfterHide]="'eye-slash'"
-        [isShowHide]="true"
-        (iconClicked)="onPasswordIconClicked($event)"
-      ></app-input-field>
-    </div>
-
-    <div class="my-4">
-      <app-input-field
-        [control]="$any(form.get('age'))"
-        [type]="'number'"
-        [name]="'age'"
-        [label]="'Age'"
-        [placeholder]="'Enter your age'"
-      ></app-input-field>
-    </div>
+    <!-- select -->
+    <app-select
+      [control]="$any(form.get('company'))"
+      [name]="'company'"
+      [label]="'Company'"
+      [items]="companies"
+      [preselectedItem]="preselectedCompany"
+    ></app-select>
   </form>
 </div>
