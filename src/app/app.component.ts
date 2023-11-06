@@ -15,6 +15,7 @@ import {
 import { ButtonComponent } from './FEATURES/button/button.component';
 import { SelectComponent } from './FEATURES/select/select.component';
 import { TooltipComponent } from './FEATURES/tooltip/tooltip.component';
+import { TogglerComponent } from './FEATURES/toggler/toggler.component';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,7 @@ import { TooltipComponent } from './FEATURES/tooltip/tooltip.component';
     ButtonComponent,
     SelectComponent,
     TooltipComponent,
+    TogglerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -39,6 +41,7 @@ export class AppComponent {
     password: [null, [Validators.required, Validators.minLength(3)]],
     age: [null, [Validators.required, Validators.min(18), Validators.max(99)]],
     company: [null, [Validators.required]],
+    isActive: [null, [Validators.required]],
   });
   ButtonVisualType = ButtonVisualType;
   ButtonType = ButtonType;
@@ -70,5 +73,9 @@ export class AppComponent {
 
   onButtonClick() {
     console.log('Button clicked');
+  }
+
+  onTogglerClick($event: any) {
+    console.log($event);
   }
 }

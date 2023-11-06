@@ -155,5 +155,16 @@
       >
       </app-tooltip>
     </h3>
+
+    <!-- toggler -->
+    <app-toggler
+      [name]="'isActive'"
+      [selected]="true"
+      [label]="'Is active'"
+      [togglerColor]="'darkgreen'"
+      [togglerBgColor]="'lightgreen'"
+      [control]="$any(form.get('isActive'))"
+      (togglerClicked)="onTogglerClick($event)"
+    ></app-toggler>
   </form>
 </div>
