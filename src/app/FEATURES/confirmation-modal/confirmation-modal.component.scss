@@ -1,0 +1,39 @@
+.static-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-wrapper {
+  z-index   : 40;
+  position  : absolute;
+  left      : 0;
+  top       : 0;
+  min-width : 100%;
+  min-height: 100%;
+}
+
+.custom-modal {
+  width        : var(--modalWidth);
+  min-height   : var(--modalHeight);
+  position     : relative;
+  border       : solid 1px #ccc;
+  border-radius: 10px;
+  background   : aliceblue;
+  z-index      : 50;
+  margin       : 200px auto auto auto;
+  padding      : 10px;
+}
+
+.custom-modal-header {
+  border-bottom: solid 1px #ccc;
+}
+
+.custom-modal-footer {
+  display       : flex;
+  flex-direction: row;
+  position      : absolute;
+  bottom        : 10px;
+  left          : 10px;
+  width         : calc(100% - 20px);
+  border-top    : solid 1px #ccc;
+  padding       : 10px 0;
+}

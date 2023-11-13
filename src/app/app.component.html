@@ -167,4 +167,18 @@
       (togglerClicked)="onTogglerClick($event)"
     ></app-toggler>
   </form>
+
+  <button class="btn btn-dark mt-4" (click)="openModal()">
+    Open Modal
+    {{ cmService.showModal$ | async }}
+  </button>
+
+  <app-confirmation-modal
+    [title]="'Info dadd  '"
+    [description]="'You need to finish survey first'"
+    [hasCancelButton]="true"
+    [leftButtonText]="'Cancel'"
+    [rightButtonText]="'OK'"
+    [hasStaticBackdrop]="true"
+  ></app-confirmation-modal>
 </div>

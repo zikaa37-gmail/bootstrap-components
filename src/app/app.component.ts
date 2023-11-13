@@ -16,6 +16,8 @@ import { ButtonComponent } from './FEATURES/button/button.component';
 import { SelectComponent } from './FEATURES/select/select.component';
 import { TooltipComponent } from './FEATURES/tooltip/tooltip.component';
 import { TogglerComponent } from './FEATURES/toggler/toggler.component';
+import { ConfirmationModalService } from './FEATURES/confirmation-modal/confirmation-modal.service';
+import { ConfirmationModalComponent } from './FEATURES/confirmation-modal/confirmation-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -29,11 +31,13 @@ import { TogglerComponent } from './FEATURES/toggler/toggler.component';
     SelectComponent,
     TooltipComponent,
     TogglerComponent,
+    ConfirmationModalComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  cmService = inject(ConfirmationModalService);
   fb = inject(FormBuilder);
   form = this.fb.group({
     name: [null, [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]],
@@ -77,5 +81,9 @@ export class AppComponent {
 
   onTogglerClick($event: any) {
     console.log($event);
+  }
+
+  openModal() {
+    this.cmService.showModal$.next(true);
   }
 }
